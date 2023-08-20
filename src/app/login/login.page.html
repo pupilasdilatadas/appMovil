@@ -14,14 +14,14 @@
 
     <ion-card-content>
         <ion-input
-        type="text" minlength="3" maxlength="8" fill="solid" label="User" labelPlacement="floating" helperText="Enter a valid user" errorText="Invalid User" ngModel user
+        type="text" minlength="3" maxlength="8" fill="solid" label="User" labelPlacement="floating" helperText="Enter a valid user" errorText="Invalid User" [(ngModel)] = "username" 
         ></ion-input>
 
         <ion-input
-        type="password" minlength="4" maxlength="4" fill="solid" label="Password" labelPlacement="floating" helperText="Enter a valid Password" errorText="Invalid Password" ngModel password
+        type="password" minlength="4" maxlength="4" fill="solid" label="Password" labelPlacement="floating" helperText="Enter a valid Password" errorText="Invalid Password" [(ngModel)] = "password" 
         ></ion-input>
 
-        <ion-button>
+        <ion-button (click)="logearse()">
           Login
         </ion-button>
     </ion-card-content>
