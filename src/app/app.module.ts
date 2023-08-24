@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 import {MatDatepickerModule} from '@angular/material/datepicker'; //importar el DATEPICKER
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; //importar el MODULE
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
