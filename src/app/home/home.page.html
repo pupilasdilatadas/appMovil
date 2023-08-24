@@ -1,6 +1,6 @@
-<ion-header [translucent]="true">
-  <ion-toolbar color = "tertiary">
-    <ion-title>Page Home</ion-title>
+<ion-header>
+  <ion-toolbar class="top-barra">  <!-- Barra con color en el CSS -->
+    <ion-title >Page Home</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -9,25 +9,27 @@
   <div id = "square" style="font-size: 30px;">
     <p class="centered-text">Home Page!</p>
   </div>
-  <ion-button (click) = "ejecutarBotonsito()" expand = "full">Botonsito Activador!</ion-button>
+
   
     <ion-item  class="ion-padding">
       <ion-label>Nombre</ion-label>
-      <ion-input [(ngModel)] = "firstname" id = "nombreInput"></ion-input>
+      <ion-input [(ngModel)] = "firstname" id = "nombreInput"></ion-input> 
       <ion-button (click) = "ejecutarAnimNombre()" expand="full">Limpiar</ion-button>
     </ion-item>
 
   <ion-item class="ion-padding">
     <ion-label>Apellido</ion-label>
+    <!-- el ngModel sirve como conexión entre el HTML y el TypeScript -->
     <ion-input [(ngModel)] = "lastname" id = "apellidoInput"></ion-input>
     <ion-button (click) = "ejecutarAnimApellido()" expand="full">Limpiar</ion-button>
   </ion-item>
 
-  <mat-form-field>
-    <mat-label>Choose a date</mat-label>
-    <input matInput [matDatepicker]="picker">
-    <mat-hint>MM/DD/YYYY</mat-hint>
-    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
-  </mat-form-field>
+ <mat-form-field class="datepicker-form-field">
+  <mat-label>Escoge una fecha!</mat-label>
+  <input matInput [matDatepicker]="picker">
+  <mat-hint>MM/DD/YYYY</mat-hint>
+  <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+
   

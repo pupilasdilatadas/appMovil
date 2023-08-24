@@ -8,3 +8,16 @@
     font-size: 30px;
     text-align: center;
 }
+
+.datepicker-form-field {
+    margin: 20px; 
+    padding: 10px; 
+    background-color: #1a7963; 
+    border-radius: 8px; // Esquinas redondas!
+  }
+  
+ion-toolbar.top-barra {
+--background: #1a7963; //-- quiere decir variable personalizada
+--color: black;
+}
+
