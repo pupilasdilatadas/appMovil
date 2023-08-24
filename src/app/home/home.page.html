@@ -6,24 +6,28 @@
 
 <ion-content class="ion-padding">
 
-  <div #square style="font-size: 30px;">
+  <div id = "square" style="font-size: 30px;">
     <p class="centered-text">Home Page!</p>
   </div>
-  <ion-button (click) = "toggleAnimation()" expand = "full">Botonsito!</ion-button>
+  <ion-button (click) = "ejecutarBotonsito()" expand = "full">Botonsito Activador!</ion-button>
   
     <ion-item  class="ion-padding">
-      <ion-label position="floating">Nombre</ion-label>
-      <ion-input #nombreInput></ion-input>
-      <ion-button (click)="ejecutarAnimacion(nombreInput)" expand="full">Limpiar</ion-button>
+      <ion-label>Nombre</ion-label>
+      <ion-input [(ngModel)] = "firstname" id = "nombreInput"></ion-input>
+      <ion-button (click) = "ejecutarAnimNombre()" expand="full">Limpiar</ion-button>
     </ion-item>
 
   <ion-item class="ion-padding">
-    <ion-label position="floating">Apellido</ion-label>
-    <ion-input #apellidoInput></ion-input>
-    <ion-button (click)="ejecutarAnimacion(apellidoInput)"  expand="full">Limpiar</ion-button>
+    <ion-label>Apellido</ion-label>
+    <ion-input [(ngModel)] = "lastname" id = "apellidoInput"></ion-input>
+    <ion-button (click) = "ejecutarAnimApellido()" expand="full">Limpiar</ion-button>
   </ion-item>
 
-  <input matInput [matDatepicker]="picker">
-  <mat-hint>MM/DD/YYYY</mat-hint>
-  <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-  <mat-datepicker #picker></mat-datepicker>
+  <mat-form-field>
+    <mat-label>Choose a date</mat-label>
+    <input matInput [matDatepicker]="picker">
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  

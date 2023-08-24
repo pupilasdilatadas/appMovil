@@ -10,61 +10,111 @@ import { IonInput } from '@ionic/angular';
 export class HomePage implements OnInit, AfterViewInit {
 
   anim!: Animation;
-  @ViewChild('square', {static: false}) square!: ElementRef;
-
   animacionInput!: Animation;
-  @ViewChild('nombreInput', { static: false }) nombreInput!: IonInput;
-  @ViewChild('apellidoInput', { static: false }) apellidoInput!: IonInput;
+
+  firstname : string = "";
+  lastname : string = "";
 
   constructor(private animationCtrl: AnimationController) { }
 
   isPlaying = false;
   isActivo = false;
 
-
   ngOnInit() {
   }
 
   ngAfterViewInit(){
-    this.anim = this.animationCtrl.create('myanim');
-    this.anim
-    .addElement(this.square?.nativeElement)
-    .duration(2500)
-    .easing('ease-out')
-    .iterations(1) //o Infinity
-    .keyframes([
-      { offset: 0, transform: 'translateX(0%)', opacity: 1 },
-      { offset: 0.5, transform: 'translateX(110%)', opacity: 1 },
-      { offset: 0.75, transform: 'translateX(-110%)', opacity: 0 },
-      { offset: 1, transform: 'translateX(0%)', opacity: 1 }
-    ]);
-  
-    this.animacionInput = this.animationCtrl.create('inputAnimation');
-    this.animacionInput
-      .duration(1000)
-      .iterations(1)
+    let square = document.querySelector('#square')
+
+    if (square){
+      this.anim = this.animationCtrl.create('myanim');
+      this.anim
+      .addElement(square)
+      .duration(2500)
+      .easing('ease-out')
+      .iterations(Infinity) //o Infinity
       .keyframes([
-        { offset: 0, transform: 'translateX(0px)' },
-        { offset: 1, transform: 'translateX(50px)' },
+        { offset: 0, transform: 'translateX(0%)', opacity: 1 },
+        { offset: 0.5, transform: 'translateX(110%)', opacity: 1 },
+        { offset: 0.75, transform: 'translateX(-110%)', opacity: 0 },
+        { offset: 1, transform: 'translateX(0%)', opacity: 1 }
+      ]);
+    } 
+    
+    this.anim.play()
+  }
+
+
+
+  ejecutarBotonsito(){
+    let square = document.querySelector('#square')
+
+    if (square){
+      this.anim = this.animationCtrl.create('myanim');
+      this.anim
+      .addElement(square)
+      .duration(2500)
+      .easing('ease-out')
+      .iterations(Infinity) //o Infinity
+      .keyframes([
+        { offset: 0, transform: 'translateX(0%)', opacity: 1 },
+        { offset: 0.5, transform: 'translateX(110%)', opacity: 1 },
+        { offset: 0.75, transform: 'translateX(-110%)', opacity: 0 },
+        { offset: 1, transform: 'translateX(0%)', opacity: 1 }
       ]);
 
+      this.anim.play()
+    }
+
+   
+    
   }
 
-  toggleAnimation(){
-    if (this.isPlaying) {
-      this.anim.pause();
-    } else {
-      this.anim.play();
+  ejecutarAnimNombre(){
+    let nombreInput = document.querySelector('#nombreInput')
+       
+    if (nombreInput) {
+      this.anim = this.animationCtrl.create('myanim');
+      this.anim
+      .addElement(nombreInput)
+      .duration(1000)
+      .iterations(1) //o Infinity
+      .keyframes([
+        { offset: 0, transform: 'translateX(50px)' },
+        { offset: 1, transform: 'translateX(0px)' },
+      ]);
+
+      this.anim.play()
     }
-    this.isPlaying = !this.isPlaying;
+
+    setTimeout(() => {
+      this.firstname = "";
+    }, 1000);
+    
   }
 
-  ejecutarAnimacion(input: IonInput) {
-    if (this.isActivo) {
-      this.animacionInput.pause();
-    } else {
-      this.animacionInput.play();
+  
+  ejecutarAnimApellido(){
+    let apellidoInput = document.querySelector('#apellidoInput')
+       
+    if (apellidoInput) {
+      this.anim = this.animationCtrl.create('myanimApellido');
+      this.anim
+      .addElement(apellidoInput)
+      .duration(1000)
+      .iterations(1) //o Infinity
+      .keyframes([
+        { offset: 0, transform: 'translateX(50px)' },
+        { offset: 1, transform: 'translateX(0px)' },
+      ]);
+
+      this.anim.play()
     }
-    this.isActivo = !this.isActivo;
+
+    setTimeout(() => {
+      this.lastname = "";
+    }, 1000);
+    
   }
+
 }
