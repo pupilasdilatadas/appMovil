@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { QRCodeModule } from 'angularx-qrcode';
+
 
 import { IonicModule } from '@ionic/angular';
 
@@ -20,7 +22,8 @@ import { MatNativeDateModule } from '@angular/material/core'; //importar el NATI
     HomePageRoutingModule,
     MatDatepickerModule,
     MatInputModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    QRCodeModule
   ],
   declarations: [HomePage]
 })

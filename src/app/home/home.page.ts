@@ -13,6 +13,7 @@ export class HomePage implements OnInit, AfterViewInit {
   firstname: string = "";
   lastname: string = "";
 
+  datosqr: string = "www.google.www";
   constructor(private animationCtrl: AnimationController) { } //inyecta una instancia de lo que hay dentro en la clase
 
   ngOnInit() {
